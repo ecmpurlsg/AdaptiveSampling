@@ -25,7 +25,6 @@ To run evaluations, use the `test.py` script. Append the `--render` flag to visu
 - TD3-TS: python3 src/learning/train.py --algo ts_dwa --agent td3 --use-wandb --wandb-project PredictiveDWA --action-select-interval 60
 
 **Test**
-Use --render to see the simulation
 - DWA: python3 src/learning/test.py --algo dwa
 - TD3-DWA: python3 src/learning/test.py --algo td3_dwa --action-select-interval 1 --model checkpoints/td3_dwa.pt
 - TS: python3 src/learning/test.py --algo ts_dwa
