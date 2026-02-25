@@ -13,7 +13,6 @@ This repository provides the implementation for an Adaptive Sampling Modulation 
 ## Repository Structure
 - `src/learning/`: Core logic for training and testing algorithms.
 - `checkpoints/`: Storage for pre-trained TD3 models (`.pt` files).
-- `figures/`: Documentation and visualization assets.
 
 ## Usage
 
