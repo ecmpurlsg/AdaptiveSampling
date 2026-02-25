@@ -20,7 +20,13 @@ This repository provides the implementation for an Adaptive Sampling Modulation 
 ### 1. Evaluation and Testing
 To run evaluations, use the `test.py` script. Append the `--render` flag to visualize the robot's navigation in the GUI.
 
-**Standard DWA (Baseline)**
-```bash
-python3 src/learning/test.py --algo dwa --render
-The TD3 policy uses an actor MLP (dobs​→256→256→dact​) with ReLU activations and a scaled tanh output. The critics utilize twin networks receiving concatenated state-action inputs to provide stable Q-value estimates.
+**Train**
+- TD3-DWA: python3 src/learning/train.py --algo dwa --agent td3 --use-wandb --wandb-project PredictiveDWA
+- TD3-TS: python3 src/learning/train.py --algo ts_dwa --agent td3 --use-wandb --wandb-project PredictiveDWA --action-select-interval 60
+
+**Test**
+Use --render to see the simulation
+- DWA: python3 src/learning/test.py --algo dwa
+- TD3-DWA: python3 src/learning/test.py --algo td3_dwa --action-select-interval 1 --model checkpoints/td3_dwa.pt
+- TS: python3 src/learning/test.py --algo ts_dwa
+- TD3-TS: python3 src/learning/test.py --algo td3_ts_dwa --action-select-interval 60 --model checkpoints/td3_ts_dwa.pt
